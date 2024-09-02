@@ -5,21 +5,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <!--Content page style-->
+    <!--Content page style-->
     <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
         <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
         <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}"/>
     </Style>
 
     <Style TargetType="Grid">
-        <Setter Property="Padding" Value="0"/>
-        <Setter Property="Margin" Value="0"/>
-        <Setter Property="RowSpacing" Value="0"/>
-        <Setter Property="ColumnSpacing" Value="0"/>
-        <Setter Property="VerticalOptions" Value="Fill"/>
-        <Setter Property="HorizontalOptions" Value="Fill"/>
-        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="RowSpacing" Value="0" />
+        <Setter Property="ColumnSpacing" Value="0" />
+        <Setter Property="VerticalOptions" Value="Fill" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
     </Style>
-    
+
     <!--button styles-->
     <Style TargetType="Button" x:Key="NumberButtonStyle">
         <Setter Property="FontSize" Value="22" />
@@ -72,10 +73,9 @@
         </Setter>
         <Setter Property="FontAutoScalingEnabled" Value="False" />
     </Style>
-    
-    <!--label styles-->
 
-    <Style TargetType="Label" x:Key="EqualsLabelStyles">
+    <!--label styles-->
+    <Style TargetType="Label" x:Key="EqualsLabelStyle">
         <Setter Property="FontSize" Value="28" />
         <Setter Property="TextColor" Value="#efbb31" />
         <Setter Property="FontFamily" Value="LightFont" />
@@ -83,7 +83,7 @@
         <Setter Property="FontAutoScalingEnabled" Value="False" />
     </Style>
 
-    <Style TargetType="Label" x:Key="ResultLabelStyles">
+    <Style TargetType="Label" x:Key="ResultLabelStyle">
         <Setter Property="FontSize" Value="28" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="FontFamily" Value="RegularFont" />
@@ -91,7 +91,7 @@
         <Setter Property="FontAutoScalingEnabled" Value="False" />
     </Style>
 
-    <Style TargetType="Label" x:Key="InputBoxLabelStyles">
+    <Style TargetType="Label" x:Key="InputBoxLabelStyle">
         <Setter Property="FontSize" Value="32" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="FontFamily" Value="LightFont" />
