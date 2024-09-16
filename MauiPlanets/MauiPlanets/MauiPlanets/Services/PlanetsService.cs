@@ -1,9 +1,5 @@
 ﻿using MauiPlanets.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MauiPlanets.Services
 {
@@ -62,7 +58,12 @@ namespace MauiPlanets.Services
                 Name = "Mars",
                 Subtitle = "The red beauty",
                 HeroImage = "mars.png",
-                Description = "No planet has sparked the imaginations of humans as much as Mars. It may be the reddish color of Mars, or the fact that it can often be easily seen in the night sky, that has caused people to wonder about this close neighbor of ours. Tales of “Martians” invading Earth have been around for well over fifty years. But is it likely that any kind of life really does exist on Mars? ",
+                Description = "No planet has sparked the imaginations of humans as much " +
+                "as Mars. It may be the reddish color of Mars, or the fact that it can " +
+                "often be easily seen in the night sky, that has caused people to wonder " +
+                "about this close neighbor of ours. Tales of “Martians” invading Earth " +
+                "have been around for well over fifty years. But is it likely that any " +
+                "kind of life really does exist on Mars? ",
                 AccentColorStart = Color.FromArgb("#a23036"),
                 AccentColorEnd = Color.FromArgb("#eb3333"),
                 Images = new()
@@ -71,7 +72,106 @@ namespace MauiPlanets.Services
                     "https://www.worldatlas.com/r/w1300-q80/upload/bb/c3/32/shutterstock-1041249343.jpg",
                     "https://www.openaccessgovernment.org/wp-content/uploads/2021/04/dreamstime_xxl_121672573-scaled.jpg"
                 }
+            },
+
+            new()
+            {
+                Name = "Jupiter",
+                Subtitle = "The gas giant",
+                HeroImage = "jupiter.png",
+                Description = "Jupiter is the fifth planet from the Sun and the " +
+                "largest in the Solar System. It is a gas giant with a mass more " +
+                "than 2.5 times that of all the other planets in the Solar System " +
+                "combined, and slightly less than one-thousandth the mass of the " +
+                "Sun. Its diameter is eleven times that of Earth, and a tenth " +
+                "that of the Sun. ",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#cd8026"),
+                Images = new()
+                {
+                    "https://solarsystem.nasa.gov/system/feature_items/images/11_Full_Jupiter-800.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/10_Jupiter_Io_Juno-800.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/13_PIA24237_Jupiter_Cyclones-800.jpg"
+                }
+            },
+
+            new()
+            {
+                Name = "Saturn",
+                Subtitle = "The ring planet",
+                HeroImage = "saturn.png",
+                Description = "Saturn is the sixth planet from the Sun and " +
+                            "the second-largest in the Solar System, after " +
+                            "Jupiter. It is a gas giant with an average " +
+                            "radius of about nine and a half times that " +
+                            "of Earth. It has only one-eighth the average " +
+                            "density of Earth, but is over 95 times more massive.",
+                AccentColorStart = Color.FromArgb("#996237"),
+                AccentColorEnd = Color.FromArgb("#c6502f"),
+                Images = new()
+                {
+                    "https://solarsystem.nasa.gov/system/feature_items/images/151_saturn_carousel_1.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/152_saturn_carousel_2.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/155_saturn_carousel_5.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/153_saturn_carousel_3.jpg"
+                }
+            },
+
+            new()
+            {
+                Name = "Uranus",
+                Subtitle = "The Herschel planet",
+                HeroImage = "uranus.png",
+                Description = "Uranus is the seventh planet from the Sun. " +
+                            "It is named after Greek sky deity Uranus (Caelus), who in " +
+                            "Greek mythology is the father of Cronus (Saturn), a grandfather " +
+                            "of Zeus (Jupiter) and great-grandfather of Ares (Mars). Uranus " +
+                            "has the third-largest planetary radius and fourth-largest " +
+                            "planetary mass in the Solar System.",
+                AccentColorStart = Color.FromArgb("#9d4a40"),
+                AccentColorEnd = Color.FromArgb("#996237"),
+                Images = new()
+                {
+                    "https://solarsystem.nasa.gov/system/feature_items/images/88_carousel_uranus.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/89_uranus_carousel_1.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/88_carousel_uranus.jpg"
+                }
+            },
+
+                        new()
+            {
+                Name = "Neptune",
+                Subtitle = "The god of the sea",
+                HeroImage = "neptune.png",
+                Description = "Neptune is the eighth planet from the Sun and " +
+                            "the farthest known planet in the Solar System. It is the " +
+                            "fourth-largest planet in the Solar System by diameter, the " +
+                            "third-most-massive planet, and the densest giant planet. " +
+                            "It is 17 times the mass of Earth, and slightly more " +
+                            "massive than its near-twin Uranus.",
+                AccentColorStart = Color.FromArgb("#0c293d"),
+                AccentColorEnd = Color.FromArgb("#26abe0"),
+                Images = new()
+                {
+                    "https://solarsystem.nasa.gov/system/feature_items/images/82_carousel_neptune_1.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/86_carousel_neptune_5.jpg",
+                    "https://solarsystem.nasa.gov/system/feature_items/images/84_neptune_carousel_2.jpg"
+                }
             }
         };
+
+        public static List<Planet> GetFeaturedPlanets()
+        {
+            var random = new Random();
+            var randomizePlanets = planets
+                .OrderBy(item => random.Next());
+
+            return randomizePlanets
+                .Take(2)
+                .ToList();
+        }
+
+        public static List<Planet> GetAllPlanets()
+            => planets;
     }
 }
